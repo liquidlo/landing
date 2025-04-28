@@ -5,95 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anton Simanenko</title>
 
-  <!-- 1. Подключаем JetBrains Mono (подтягивает и кириллицу) -->
+  <!-- JetBrains Mono: полная латиница + кириллица -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     /* ---------- base ---------- */
     :root{
-      /* 2. Стек: сначала JetBrains Mono, затем fallback-моно */
-      --mono: 'JetBrains Mono', 'Fira Mono', 'Cascadia Mono',
-              'SFMono-Regular', Menlo, Monaco, Consolas,
-              'Liberation Mono', 'Courier New', monospace;
+      --mono:'JetBrains Mono','Fira Mono','Cascadia Mono',
+             'SFMono-Regular',Menlo,Monaco,Consolas,
+             'Liberation Mono','Courier New',monospace;
     }
-
-    html, body {
-      margin: 0;
-      height: 100%;
-      background: #fff;
-      font-family: var(--mono);
-      color: #555;
-      font-size: 16px;
-      line-height: 1.6;
+    html,body{
+      margin:0;
+      height:100%;
+      background:#fff;
+      font-family:var(--mono);
+      color:#555;
+      font-size:16px;
+      line-height:1.6;
     }
 
     /* ---------- “last updated” badge ---------- */
-    .top-right {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.75rem;
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      white-space: nowrap;
+    .top-right{
+      position:absolute;
+      top:1rem;
+      right:1rem;
+      font-size:.75rem;
+      color:#999;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      white-space:nowrap;
     }
 
     /* ---------- main block ---------- */
-    .content {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 540px;
-      width: 100%;
-      padding: 0 2rem;
-      box-sizing: border-box;   /* фиксируем скроллинг */
-      text-align: left;
+    .content{
+      position:absolute;
+      top:45%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      max-width:540px;
+      width:100%;
+      padding:0 2rem;
+      box-sizing:border-box; /* фиксируем скроллинг */
+      text-align:left;
     }
-    .content p { margin: 0 0 1.6rem 0; }
+    .content p{margin:0 0 1.6rem 0;}
 
     /* ---------- links ---------- */
-    a {
-      color: #C59D33;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    a:hover { text-decoration: underline; }
+    a{color:#C59D33;text-decoration:none;cursor:pointer;}
+    a:hover{text-decoration:underline;}
 
     /* ---------- language switcher ---------- */
-    .lang-switcher {
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-    .lang-switcher a { color: #C59D33; }
-    .lang-switcher a:hover { text-decoration: underline; }
-    .lang-switcher span { color: #555; }
-    .slash { margin: 0 0.3rem; color: #555; }
+    .lang-switcher{margin-bottom:2rem;font-size:1rem;}
+    .lang-switcher a{color:#C59D33;}
+    .lang-switcher a:hover{text-decoration:underline;}
+    .lang-switcher span{color:#555;}
+    .slash{margin:0 .3rem;color:#555;}
 
     /* ---------- responsive ---------- */
-    @media (max-width:600px)  { .content { padding: 0 1.5rem; } }
-    @media (max-width:400px)  { .content { padding: 0 1rem;  } }
+    @media(max-width:600px){.content{padding:0 1.5rem;}}
+    @media(max-width:400px){.content{padding:0 1rem;}}
   </style>
 
   <script>
-    function switchLanguage(lang) {
-      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
-      document.getElementById('ru').style.display = (lang === 'ru') ? 'block' : 'none';
+    function switchLanguage(lang){
+      document.getElementById('en').style.display=(lang==='en')?'block':'none';
+      document.getElementById('ru').style.display=(lang==='ru')?'block':'none';
 
-      if (lang === 'en') {
-        document.getElementById('link-en').style.display = 'none';
-        document.getElementById('link-ru').style.display = 'inline';
-        document.getElementById('text-en').style.display = 'inline';
-        document.getElementById('text-ru').style.display = 'none';
-      } else {
-        document.getElementById('link-en').style.display = 'inline';
-        document.getElementById('link-ru').style.display = 'none';
-        document.getElementById('text-en').style.display = 'none';
-        document.getElementById('text-ru').style.display = 'inline';
+      if(lang==='en'){
+        document.getElementById('link-en').style.display='none';
+        document.getElementById('link-ru').style.display='inline';
+        document.getElementById('text-en').style.display='inline';
+        document.getElementById('text-ru').style.display='none';
+      }else{
+        document.getElementById('link-en').style.display='inline';
+        document.getElementById('link-ru').style.display='none';
+        document.getElementById('text-en').style.display='none';
+        document.getElementById('text-ru').style.display='inline';
       }
     }
-    window.onload = () => switchLanguage('en');
+    window.onload=()=>switchLanguage('en');
   </script>
 </head>
 
@@ -113,17 +104,11 @@
     <!-- English version -->
     <div id="en">
       <p>
-        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.<br>
-        I help teams apply AI confidently and creatively.
+        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator. I help teams apply AI confidently and creatively.
       </p>
 
       <p>
-        Right now I design and implement AI solutions at
-        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.<br>
-        I teach and speak for companies like SIBUR, The Edgers, OKKAM, Partsdirect,<br>
-        Pasha Holding, NTS Gradient, and Colgate-Palmolive.<br>
-        I run Prompty Trainer — a prompt-training simulator, and I'm building an AI toy,
-        <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
+        Right now I design and implement AI solutions at <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>. I teach and speak for companies like SIBUR, The Edgers, OKKAM, Partsdirect, Pasha Holding, NTS Gradient, and Colgate-Palmolive. I run Prompty Trainer — a prompt-training simulator, and I'm building an AI toy, <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
       </p>
 
       <p>
@@ -134,17 +119,11 @@
     <!-- Russian version -->
     <div id="ru" style="display:none;">
       <p>
-        Бип-буп. Это Антон — креативный директор, техно-энтузиаст и&nbsp;преподаватель.<br>
-        Помогаю командам разумно и&nbsp;творчески применять ИИ в&nbsp;работе.
+        Бип-буп. Это Антон — креативный директор, техно-энтузиаст и&nbsp;преподаватель. Помогаю командам разумно и&nbsp;творчески применять&nbsp;ИИ в&nbsp;работе.
       </p>
 
       <p>
-        Я создаю и&nbsp;внедряю ИИ-решения в&nbsp;
-        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.<br>
-        Преподаю и&nbsp;выступаю для компаний SIBUR, The Edgers, OKKAM, Partsdirect,<br>
-        Pasha Holding, НТС Градиент и&nbsp;Colgate-Palmolive.<br>
-        Делаю Prompty Trainer — тренажёр промтинга и&nbsp;создаю AI-игрушку
-        <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
+        Я создаю и&nbsp;внедряю ИИ-решения в&nbsp;<a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>. Преподаю и&nbsp;выступаю для компаний SIBUR, The&nbsp;Edgers, OKKAM, Partsdirect, Pasha&nbsp;Holding, НТС&nbsp;Градиент и&nbsp;Colgate-Palmolive. Делаю тренажёр промтинга&nbsp;«Промпти» и&nbsp;создаю AI-игрушку <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI&nbsp;Cube</a>.
       </p>
 
       <p>
