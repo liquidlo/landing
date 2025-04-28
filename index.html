@@ -6,45 +6,59 @@
   <title>Anton Simanenko</title>
 
   <style>
-    /* ---------- base styles ---------- */
+    /* ---------- base ---------- */
     html, body {
       margin: 0;
       height: 100%;
-      background: #fff;
+      background:#fff;
       font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
                    "Courier New", monospace;
-      color: #555;
+      color:#555;
     }
 
-    /* ---------- content block ---------- */
-    .content {
-      position: absolute;
-      top: 45%;              /* 50 % — геом. центр; 45 % даёт подъём ≈ 5 % */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 540px;      /* на 10 % уже 600 px */
-      width: 100%;
-      line-height: 1.6;
-      font-size: 1rem;
+    /* ---------- “last updated” badge ---------- */
+    .top-right{
+      position:absolute;
+      top:1rem;
+      right:1rem;
+      font-size:0.75rem;
+      color:#999;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      white-space:nowrap;
     }
 
-    /* ---------- paragraph spacing ---------- */
-    .content p { margin: 0 0 1.6rem 0; }
+    /* ---------- main block ---------- */
+    .content{
+      position:absolute;
+      top:45%;               /* 50 % = центр, 45 % – чуть выше */
+      left:50%;
+      transform:translate(-50%,-50%);
+      max-width:540px;       /* ≈ 10 % уже 600 px */
+      width:100%;
+      line-height:1.6;
+      font-size:1rem;
+    }
+    .content p{margin:0 0 1.6rem 0;}
 
     /* ---------- links ---------- */
-    a {
-      color: #C59D33;        /* горчично-жёлтый, как у CathyKC */
-      text-decoration: none;
+    a{
+      color:#C59D33;         /* горчичный акцент, как у CathyKC */
+      text-decoration:none;
     }
-    a:hover { text-decoration: underline; }
+    a:hover{ text-decoration:underline; }
 
-    /* ---------- responsive tweaks ---------- */
-    @media (max-width: 600px) { .content { font-size: 0.95rem; } }
-    @media (max-width: 400px) { .content { font-size: 0.9rem;  } }
+    /* ---------- responsive ---------- */
+    @media(max-width:600px){ .content{font-size:0.95rem;} }
+    @media(max-width:400px){ .content{font-size:0.9rem;} }
   </style>
 </head>
 
 <body>
+  <!-- badge -->
+  <div class="top-right">LAST&nbsp;UPDATED:&nbsp;2025.04.28</div>
+
+  <!-- main text -->
   <div class="content">
     <p>
       Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.
@@ -56,8 +70,9 @@
       <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
       I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect,
       Pasha Holding, NTS Gradient, and Colgate-Palmolive.
-      I run Prompty Trainer, a prompt-simulator for teams, and I’m building
-      PLAI Cube — an open-ended AI toy.
+      I run Prompty&nbsp;Trainer, a prompt-simulator for teams, and I’m building
+      <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI&nbsp;Cube</a> —
+      an open-ended AI toy.
     </p>
 
     <p>
