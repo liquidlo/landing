@@ -37,7 +37,7 @@
       width: 100%;
       line-height: 1.6;
       font-size: 1rem;
-      text-align: center;
+      text-align: left; /* Левое выравнивание */
     }
     .content p { margin: 0 0 1.6rem 0; }
 
@@ -49,25 +49,48 @@
     }
     a:hover { text-decoration: underline; }
 
-    /* ---------- responsive ---------- */
-    @media (max-width:600px) { .content { font-size: 0.95rem; } }
-    @media (max-width:400px) { .content { font-size: 0.9rem; } }
-
     /* ---------- language switcher ---------- */
     .lang-switcher {
       margin-bottom: 2rem;
+      font-size: 1rem;
     }
     .lang-switcher a {
-      margin: 0 0.5rem;
-      font-weight: bold;
+      color: #C59D33;
+      text-decoration: none;
+      margin: 0;
+      font-weight: normal;
     }
+    .lang-switcher a:hover {
+      text-decoration: underline;
+    }
+    .lang-switcher span {
+      color: #555; /* Обычный цвет для неактивного элемента */
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width:600px) { .content { font-size: 0.95rem; } }
+    @media (max-width:400px) { .content { font-size: 0.9rem; } }
   </style>
 
   <script>
     function switchLanguage(lang) {
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('ru').style.display = (lang === 'ru') ? 'block' : 'none';
+
+      // Переключаем отображение ссылок/спанов
+      if (lang === 'en') {
+        document.getElementById('link-en').style.display = 'none';
+        document.getElementById('link-ru').style.display = 'inline';
+        document.getElementById('text-en').style.display = 'inline';
+        document.getElementById('text-ru').style.display = 'none';
+      } else {
+        document.getElementById('link-en').style.display = 'inline';
+        document.getElementById('link-ru').style.display = 'none';
+        document.getElementById('text-en').style.display = 'none';
+        document.getElementById('text-ru').style.display = 'inline';
+      }
     }
+
     window.onload = function() {
       switchLanguage('en'); // По умолчанию английский
     };
@@ -82,7 +105,8 @@
   <div class="content">
     <!-- language switcher -->
     <div class="lang-switcher">
-      <a onclick="switchLanguage('en')">EN</a> / <a onclick="switchLanguage('ru')">RU</a>
+      <span id="text-en">en</span><a id="link-en" onclick="switchLanguage('en')" style="display:none;">en</a>/
+      <a id="link-ru" onclick="switchLanguage('ru')">ru</a><span id="text-ru" style="display:none;">ru</span>
     </div>
 
     <!-- English version -->
