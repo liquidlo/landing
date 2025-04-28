@@ -6,47 +6,48 @@
   <title>Anton Simanenko</title>
 
   <style>
-    /* ----------  base layout  ---------- */
+    /* ---------- base layout ---------- */
     html, body {
       margin: 0;
       padding: 0;
       min-height: 100%;
-      background: #ffffff;
+      background: #fff;
       font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
                    "Courier New", monospace;
-      color: #555555;
+      color: #555;
       display: flex;
       flex-direction: column;
     }
 
-    /* ----------  main block  ---------- */
+    /* ---------- main block ---------- */
     .container {
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center;          /* ставим точно в центр */
       padding: 1rem;
-      position: relative;
-      top: -8%;                 /* ≈ 15 % выше геометрического центра */
+      transform: translateY(-8vh);  /* а потом поднимаем чуть выше середины */
     }
 
     .content {
-      max-width: 540px;         /* на 10 % уже, чем стандарт 600 px */
+      max-width: 540px;             /* на 10 % уже 600 px */
       width: 100%;
       line-height: 1.6;
       font-size: 1rem;
     }
 
-    /* ----------  links  ---------- */
+    /* ---------- paragraph spacing ---------- */
+    .content p { margin: 0 0 1.6rem 0; }
+
+    /* ---------- links ---------- */
     a {
-      color: #C59D33;           /* горчично-жёлтый как на оригинале */
+      color: #C59D33;               /* «горчица» как на CathyKC */
       text-decoration: none;
-      word-break: break-word;
     }
     a:hover { text-decoration: underline; }
 
-    /* ----------  fade-in animation  ---------- */
-    .content { 
+    /* ---------- fade-in animation ---------- */
+    .content {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s ease forwards;
@@ -55,29 +56,32 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ----------  responsive tweaks  ---------- */
+    /* ---------- responsive tweaks ---------- */
     @media (max-width: 600px) { .content { font-size: 0.95rem; } }
-    @media (max-width: 400px) {
-      .content { font-size: 0.9rem; }
-    }
+    @media (max-width: 400px) { .content { font-size: 0.9rem;  } }
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="content">
-      Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.  
-      I help teams apply AI confidently and creatively.  
+      <p>
+        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.
+        I help teams apply AI confidently and creatively.
+      </p>
 
-      <br><br>
+      <p>
+        Right now I design and implement AI solutions at
+        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
+        I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect,
+        Pasha Holding, NTS Gradient, and Colgate-Palmolive.
+        I run Prompty Trainer, a prompt-simulator for teams, and I’m building
+        PLAI Cube — an open-ended AI toy.
+      </p>
 
-      Right now I design and implement AI solutions at <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.  
-      I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect, Pasha Holding, NTS Gradient, and Colgate-Palmolive.
-      I run Prompty trainer, a prompt-simulator for teams, and I’m building an open-ended AI toy <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.  
-
-      <br><br>
-
-      Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.<br>
+      <p>
+        Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.
+      </p>
     </div>
   </div>
 </body>
