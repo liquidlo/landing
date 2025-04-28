@@ -38,7 +38,8 @@
       line-height: 1.6;
       font-size: 1rem;
       text-align: left;
-      padding: 0 2rem; /* добавлены горизонтальные отступы */
+      padding: 0 2rem;
+      box-sizing: border-box; /* фиксируем скроллинг */
     }
     .content p { margin: 0 0 1.6rem 0; }
 
@@ -74,12 +75,12 @@
     /* ---------- responsive ---------- */
     @media (max-width:600px) {
       .content {
-        padding: 0 1.5rem; /* чуть меньше паддинг на планшетах */
+        padding: 0 1.5rem;
       }
     }
     @media (max-width:400px) {
       .content {
-        padding: 0 1rem; /* ещё чуть меньше на телефонах */
+        padding: 0 1rem;
       }
     }
   </style>
