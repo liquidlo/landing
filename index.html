@@ -14,39 +14,66 @@
       color: #555555;
       display: flex;
       flex-direction: column;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      color: #999999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      padding: 1rem;
+      text-align: center;
     }
 
     .content {
       max-width: 600px;
-      text-align: left;
       font-size: 1rem;
       line-height: 1.6;
+      text-align: left;
     }
 
     .highlight {
       color: #C59D33;
     }
 
-    .top-right {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 0.75rem;
-      color: #999999;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
     a {
       color: #C59D33;
       text-decoration: none;
+      word-break: break-word;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .content {
+        font-size: 0.9rem;
+      }
+      .top-right {
+        font-size: 0.7rem;
+        top: 0.75rem;
+        right: 0.75rem;
+      }
     }
   </style>
 </head>
@@ -55,9 +82,11 @@
     LAST UPDATED: 2025.04.28
   </div>
 
-  <div class="content">
-    Beep boop. My name is <span class="highlight">Anton</span>. I'm currently exploring creative projects and technology. 
-    I share ideas <a href="#">here</a>. I code <a href="#">here</a>. I learn <a href="#">here</a>.
+  <div class="container">
+    <div class="content">
+      Beep boop. My name is <span class="highlight">Anton</span>. I'm currently exploring creative projects and technology. 
+      I share ideas <a href="#">here</a>. I code <a href="#">here</a>. I learn <a href="#">here</a>.
+    </div>
   </div>
 </body>
 </html>
