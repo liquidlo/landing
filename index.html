@@ -10,74 +10,124 @@
     html, body {
       margin: 0;
       height: 100%;
-      background:#fff;
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-                   "Courier New", monospace;
-      color:#555;
+      background: #fff;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #555;
     }
 
     /* ---------- “last updated” badge ---------- */
-    .top-right{
-      position:absolute;
-      top:1rem;
-      right:1rem;
-      font-size:0.75rem;
-      color:#999;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      white-space:nowrap;
+    .top-right {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     /* ---------- main block ---------- */
-    .content{
-      position:absolute;
-      top:45%;               /* 50 % = центр, 45 % – чуть выше */
-      left:50%;
-      transform:translate(-50%,-50%);
-      max-width:540px;       /* ≈ 10 % уже 600 px */
-      width:100%;
-      line-height:1.6;
-      font-size:1rem;
+    .content {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 540px;
+      width: 100%;
+      line-height: 1.6;
+      font-size: 1rem;
+      text-align: center;
     }
-    .content p{margin:0 0 1.6rem 0;}
+    .content p { margin: 0 0 1.6rem 0; }
 
     /* ---------- links ---------- */
-    a{
-      color:#C59D33;         /* горчичный акцент, как у CathyKC */
-      text-decoration:none;
+    a {
+      color: #C59D33;
+      text-decoration: none;
+      cursor: pointer;
     }
-    a:hover{ text-decoration:underline; }
+    a:hover { text-decoration: underline; }
 
     /* ---------- responsive ---------- */
-    @media(max-width:600px){ .content{font-size:0.95rem;} }
-    @media(max-width:400px){ .content{font-size:0.9rem;} }
+    @media (max-width:600px) { .content { font-size: 0.95rem; } }
+    @media (max-width:400px) { .content { font-size: 0.9rem; } }
+
+    /* ---------- language switcher ---------- */
+    .lang-switcher {
+      margin-bottom: 2rem;
+    }
+    .lang-switcher a {
+      margin: 0 0.5rem;
+      font-weight: bold;
+    }
   </style>
+
+  <script>
+    function switchLanguage(lang) {
+      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('ru').style.display = (lang === 'ru') ? 'block' : 'none';
+    }
+    window.onload = function() {
+      switchLanguage('en'); // По умолчанию английский
+    };
+  </script>
 </head>
 
 <body>
   <!-- badge -->
   <div class="top-right">LAST&nbsp;UPDATED:&nbsp;2025.04.28</div>
 
-  <!-- main text -->
+  <!-- main content -->
   <div class="content">
-    <p>
-      Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.
-      I help teams apply AI confidently and creatively.
-    </p>
+    <!-- language switcher -->
+    <div class="lang-switcher">
+      <a onclick="switchLanguage('en')">EN</a> / <a onclick="switchLanguage('ru')">RU</a>
+    </div>
 
-    <p>
-      Right now I design and implement AI solutions at
-      <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
-      I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect,
-      Pasha Holding, NTS Gradient, and Colgate-Palmolive.
-      I run Prompty&nbsp;Trainer, a prompt-simulator for teams, and I’m building
-      <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI&nbsp;Cube</a> —
-      an open-ended AI toy.
-    </p>
+    <!-- English version -->
+    <div id="en">
+      <p>
+        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.
+        I help teams apply AI confidently and creatively.
+      </p>
 
-    <p>
-      Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.
-    </p>
+      <p>
+        Right now I design and implement AI solutions at
+        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
+        I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect,
+        Pasha Holding, NTS Gradient, and Colgate-Palmolive.
+        I run Prompty&nbsp;Trainer, a prompt-simulator for teams, and I’m building
+        <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI&nbsp;Cube</a> —
+        an open-ended AI toy.
+      </p>
+
+      <p>
+        Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.
+      </p>
+    </div>
+
+    <!-- Russian version (NRU) -->
+    <div id="ru" style="display:none;">
+      <p>
+        Бип-буп. Это Антон — креативный директор, энтузиаст технологий и преподаватель.
+        Помогаю командам уверенно и творчески применять ИИ.
+      </p>
+
+      <p>
+        Сейчас я разрабатываю и внедряю решения на основе ИИ в
+        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
+        Преподаю и выступаю для компаний SIBUR, The Edgers, OKKAM, Partsdirect,
+        Pasha Holding, НТС Градиент и Colgate-Palmolive.
+        Я управляю Prompty&nbsp;Trainer — симулятором промтов для команд, и создаю
+        <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI&nbsp;Cube</a> —
+        открытую AI-игрушку.
+      </p>
+
+      <p>
+        Давайте <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">поговорим</a>.
+      </p>
+    </div>
   </div>
 </body>
 </html>
