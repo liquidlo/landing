@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anton Simanenko</title>
 
+  <!-- 1. Подключаем JetBrains Mono (подтягивает и кириллицу) -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     /* ---------- base ---------- */
+    :root{
+      /* 2. Стек: сначала JetBrains Mono, затем fallback-моно */
+      --mono: 'JetBrains Mono', 'Fira Mono', 'Cascadia Mono',
+              'SFMono-Regular', Menlo, Monaco, Consolas,
+              'Liberation Mono', 'Courier New', monospace;
+    }
+
     html, body {
       margin: 0;
       height: 100%;
       background: #fff;
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: var(--mono);
       color: #555;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     /* ---------- “last updated” badge ---------- */
@@ -35,11 +47,9 @@
       transform: translate(-50%, -50%);
       max-width: 540px;
       width: 100%;
-      line-height: 1.6;
-      font-size: 1rem;
-      text-align: left;
       padding: 0 2rem;
-      box-sizing: border-box; /* фиксируем скроллинг */
+      box-sizing: border-box;   /* фиксируем скроллинг */
+      text-align: left;
     }
     .content p { margin: 0 0 1.6rem 0; }
 
@@ -56,33 +66,14 @@
       margin-bottom: 2rem;
       font-size: 1rem;
     }
-    .lang-switcher a {
-      color: #C59D33;
-      text-decoration: none;
-      font-weight: normal;
-    }
-    .lang-switcher a:hover {
-      text-decoration: underline;
-    }
-    .lang-switcher span {
-      color: #555;
-    }
-    .slash {
-      margin: 0 0.3rem;
-      color: #555;
-    }
+    .lang-switcher a { color: #C59D33; }
+    .lang-switcher a:hover { text-decoration: underline; }
+    .lang-switcher span { color: #555; }
+    .slash { margin: 0 0.3rem; color: #555; }
 
     /* ---------- responsive ---------- */
-    @media (max-width:600px) {
-      .content {
-        padding: 0 1.5rem;
-      }
-    }
-    @media (max-width:400px) {
-      .content {
-        padding: 0 1rem;
-      }
-    }
+    @media (max-width:600px)  { .content { padding: 0 1.5rem; } }
+    @media (max-width:400px)  { .content { padding: 0 1rem;  } }
   </style>
 
   <script>
@@ -102,10 +93,7 @@
         document.getElementById('text-ru').style.display = 'inline';
       }
     }
-
-    window.onload = function() {
-      switchLanguage('en');
-    };
+    window.onload = () => switchLanguage('en');
   </script>
 </head>
 
@@ -125,17 +113,17 @@
     <!-- English version -->
     <div id="en">
       <p>
-        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.  
+        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.<br>
         I help teams apply AI confidently and creatively.
       </p>
 
       <p>
         Right now I design and implement AI solutions at
-        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.  
-        I teach and speak for companies like SIBUR, The Edgers, OKKAM, Partsdirect,  
-        Pasha Holding, NTS Gradient, and Colgate-Palmolive.  
-        I run Prompty Trainer — a prompt-training simulator for teams,  
-        and I'm building an AI toy, <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
+        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.<br>
+        I teach and speak for companies like SIBUR, The Edgers, OKKAM, Partsdirect,<br>
+        Pasha Holding, NTS Gradient, and Colgate-Palmolive.<br>
+        I run Prompty Trainer — a prompt-training simulator, and I'm building an AI toy,
+        <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
       </p>
 
       <p>
@@ -146,17 +134,17 @@
     <!-- Russian version -->
     <div id="ru" style="display:none;">
       <p>
-        Бип-буп. Это Антон — креативный директор, техно-энтузиаст и преподаватель.  
-        Помогаю командам разумно и творчески применять ИИ в работе.
+        Бип-буп. Это Антон — креативный директор, техно-энтузиаст и&nbsp;преподаватель.<br>
+        Помогаю командам разумно и&nbsp;творчески применять ИИ в&nbsp;работе.
       </p>
 
       <p>
-        Я создаю и внедряю ИИ-решения в
-        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.  
-        Преподаю и выступаю для компаний SIBUR, The Edgers, OKKAM, Partsdirect,  
-        Pasha Holding, НТС Градиент и Colgate-Palmolive.  
-        Делаю Prompty Trainer — тренажёр промтинга для команд  
-        и создаю AI-игрушку <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
+        Я создаю и&nbsp;внедряю ИИ-решения в&nbsp;
+        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.<br>
+        Преподаю и&nbsp;выступаю для компаний SIBUR, The Edgers, OKKAM, Partsdirect,<br>
+        Pasha Holding, НТС Градиент и&nbsp;Colgate-Palmolive.<br>
+        Делаю Prompty Trainer — тренажёр промтинга и&nbsp;создаю AI-игрушку
+        <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
       </p>
 
       <p>
