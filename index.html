@@ -57,14 +57,17 @@
     .lang-switcher a {
       color: #C59D33;
       text-decoration: none;
-      margin: 0;
       font-weight: normal;
     }
     .lang-switcher a:hover {
       text-decoration: underline;
     }
     .lang-switcher span {
-      color: #555; /* Обычный цвет для неактивного элемента */
+      color: #555;
+    }
+    .slash {
+      margin: 0 0.3rem;
+      color: #555;
     }
 
     /* ---------- responsive ---------- */
@@ -77,7 +80,6 @@
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('ru').style.display = (lang === 'ru') ? 'block' : 'none';
 
-      // Переключаем отображение ссылок/спанов
       if (lang === 'en') {
         document.getElementById('link-en').style.display = 'none';
         document.getElementById('link-ru').style.display = 'inline';
@@ -105,7 +107,8 @@
   <div class="content">
     <!-- language switcher -->
     <div class="lang-switcher">
-      <span id="text-en">en</span><a id="link-en" onclick="switchLanguage('en')" style="display:none;">en</a>&nbsp;/&nbsp;
+      <span id="text-en">en</span><a id="link-en" onclick="switchLanguage('en')" style="display:none;">en</a>
+      <span class="slash">/</span>
       <a id="link-ru" onclick="switchLanguage('ru')">ru</a><span id="text-ru" style="display:none;">ru</span>
     </div>
 
