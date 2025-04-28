@@ -37,7 +37,8 @@
       width: 100%;
       line-height: 1.6;
       font-size: 1rem;
-      text-align: left; /* Левое выравнивание */
+      text-align: left;
+      padding: 0 2rem; /* добавлены горизонтальные отступы */
     }
     .content p { margin: 0 0 1.6rem 0; }
 
@@ -71,8 +72,16 @@
     }
 
     /* ---------- responsive ---------- */
-    @media (max-width:600px) { .content { font-size: 0.95rem; } }
-    @media (max-width:400px) { .content { font-size: 0.9rem; } }
+    @media (max-width:600px) {
+      .content {
+        padding: 0 1.5rem; /* чуть меньше паддинг на планшетах */
+      }
+    }
+    @media (max-width:400px) {
+      .content {
+        padding: 0 1rem; /* ещё чуть меньше на телефонах */
+      }
+    }
   </style>
 
   <script>
@@ -94,7 +103,7 @@
     }
 
     window.onload = function() {
-      switchLanguage('en'); // По умолчанию английский
+      switchLanguage('en');
     };
   </script>
 </head>
@@ -124,12 +133,12 @@
         <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.  
         I teach and speak for companies like SIBUR, The Edgers, OKKAM, Partsdirect,  
         Pasha Holding, NTS Gradient, and Colgate-Palmolive.  
-        I run <strong>Prompty Trainer</strong> — a prompt-training simulator for teams,  
-        and I'm building an AI toy, <strong>PLAI Cube</strong>.
+        I run <a href="https://promptytrainer.ai" target="_blank" rel="noopener">Prompty Trainer</a> — a prompt-training simulator for teams,  
+        and I'm building an AI toy, <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
       </p>
 
       <p>
-        Let’s talk.
+        Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.
       </p>
     </div>
 
@@ -145,12 +154,12 @@
         <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.  
         Преподаю и выступаю для компаний SIBUR, The Edgers, OKKAM, Partsdirect,  
         Pasha Holding, НТС Градиент и Colgate-Palmolive.  
-        Делаю <strong>Prompty Trainer</strong> — тренажёр промтинга для команд  
-        и создаю AI-игрушку <strong>PLAI Cube</strong>.
+        Делаю <a href="https://promptytrainer.ai" target="_blank" rel="noopener">Prompty Trainer</a> — тренажёр промтинга для команд  
+        и создаю AI-игрушку <a href="https://plaicube.ai" target="_blank" rel="noopener">PLAI Cube</a>.
       </p>
 
       <p>
-        Давайте поговорим?
+        Давайте <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">поговорим</a>?
       </p>
     </div>
   </div>
