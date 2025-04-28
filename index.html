@@ -4,91 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anton Simanenko</title>
+
   <style>
+    /* ----------  base layout  ---------- */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100%;
       background: #ffffff;
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+                   "Courier New", monospace;
       color: #555555;
       display: flex;
       flex-direction: column;
-      position: relative;
-      min-height: 100vh;
     }
 
-    .top-right {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.75rem;
-      color: #999999;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
+    /* ----------  main block  ---------- */
     .container {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 1rem;
-      text-align: center;
       position: relative;
-      top: -8%; /* Сдвигаем весь текстовый блок вверх на 8% */
+      top: -8%;                 /* ≈ 15 % выше геометрического центра */
     }
 
     .content {
-      max-width: 540px; /* Уже на 10% */
+      max-width: 540px;         /* на 10 % уже, чем стандарт 600 px */
       width: 100%;
-      font-size: 1rem;
       line-height: 1.6;
-      text-align: left;
+      font-size: 1rem;
     }
 
-    .highlight {
-      color: #C59D33;
-    }
-
+    /* ----------  links  ---------- */
     a {
-      color: #C59D33;
+      color: #C59D33;           /* горчично-жёлтый как на оригинале */
       text-decoration: none;
       word-break: break-word;
     }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
+    /* ----------  fade-in animation  ---------- */
+    .content { 
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      .content {
-        font-size: 0.95rem;
-      }
-    }
-
+    /* ----------  responsive tweaks  ---------- */
+    @media (max-width: 600px) { .content { font-size: 0.95rem; } }
     @media (max-width: 400px) {
-      .content {
-        font-size: 0.9rem;
-      }
-      .top-right {
-        font-size: 0.7rem;
-        top: 0.75rem;
-        right: 0.75rem;
-      }
+      .content { font-size: 0.9rem; }
     }
   </style>
 </head>
-<body>
-  <div class="top-right">
-    LAST UPDATED: 2025.04.28
-  </div>
 
+<body>
   <div class="container">
     <div class="content">
-      Beep boop. My name is <span class="highlight">Anton</span>. I'm currently exploring creative projects and technology. 
-      I share ideas <a href="#">here</a>. I code <a href="#">here</a>. I learn <a href="#">here</a>.
+      Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.  
+      I help teams apply AI confidently and creatively.  
+
+      <br><br>
+
+      Right now I design and implement AI solutions at <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.  
+      I teach and speak at companies such as SIBUR, The Edgers, OKKAM, Partsdirect, Pasha Holding, and NTS Gradient.  
+      I run <strong>Prompty trainer</strong>, a prompt-simulator for teams, and I’m building PLAI Cube — an open-ended AI toy.  
+
+      <br><br>
+
+      Let’s talk.<br>
+      📱 <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">Telegram</a>
     </div>
   </div>
 </body>
