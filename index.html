@@ -1,33 +1,63 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ваше имя</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anton Simanenko</title>
   <style>
-    body {
-      font-family: sans-serif;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #ffffff;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #555555;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .content {
       max-width: 600px;
-      margin: 80px auto;
-      padding: 0 20px;
+      text-align: left;
+      font-size: 1rem;
       line-height: 1.6;
     }
-    h1 {
-      font-size: 2em;
+
+    .highlight {
+      color: #C59D33;
     }
+
+    .top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 0.75rem;
+      color: #999999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
     a {
-      color: #0366d6;
+      color: #C59D33;
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Привет, я [Ваше имя]</h1>
-  <p>Исследователь в области ИИ. Руководитель команды Alignment в OpenAI.</p>
-  <p>
-    <a href="https://notion.so/ваш-профиль">Notion</a> /
-    <a href="https://github.com/ваш-профиль">GitHub</a> /
-    <a href="https://twitter.com/ваш-профиль">Twitter</a>
-  </p>
+  <div class="top-right">
+    LAST UPDATED: 2025.04.28
+  </div>
+
+  <div class="content">
+    Beep boop. My name is <span class="highlight">Anton</span>. I'm currently exploring creative projects and technology. 
+    I share ideas <a href="#">here</a>. I code <a href="#">here</a>. I learn <a href="#">here</a>.
+  </div>
 </body>
 </html>
