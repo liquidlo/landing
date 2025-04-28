@@ -6,31 +6,23 @@
   <title>Anton Simanenko</title>
 
   <style>
-    /* ---------- base layout ---------- */
+    /* ---------- base styles ---------- */
     html, body {
       margin: 0;
-      padding: 0;
-      min-height: 100%;
+      height: 100%;
       background: #fff;
       font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
                    "Courier New", monospace;
       color: #555;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* ---------- main block ---------- */
-    .container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;          /* ставим точно в центр */
-      padding: 1rem;
-      transform: translateY(-8vh);  /* а потом поднимаем чуть выше середины */
-    }
-
+    /* ---------- content block ---------- */
     .content {
-      max-width: 540px;             /* на 10 % уже 600 px */
+      position: absolute;
+      top: 45%;              /* 50 % — геом. центр; 45 % даёт подъём ≈ 5 % */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 540px;      /* на 10 % уже 600 px */
       width: 100%;
       line-height: 1.6;
       font-size: 1rem;
@@ -41,20 +33,10 @@
 
     /* ---------- links ---------- */
     a {
-      color: #C59D33;               /* «горчица» как на CathyKC */
+      color: #C59D33;        /* горчично-жёлтый, как у CathyKC */
       text-decoration: none;
     }
     a:hover { text-decoration: underline; }
-
-    /* ---------- fade-in animation ---------- */
-    .content {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-    }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     /* ---------- responsive tweaks ---------- */
     @media (max-width: 600px) { .content { font-size: 0.95rem; } }
@@ -63,26 +45,24 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="content">
-      <p>
-        Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.
-        I help teams apply AI confidently and creatively.
-      </p>
+  <div class="content">
+    <p>
+      Beep boop. That’s Anton — a creative director, tech-enthusiast, and educator.
+      I help teams apply AI confidently and creatively.
+    </p>
 
-      <p>
-        Right now I design and implement AI solutions at
-        <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
-        I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect,
-        Pasha Holding, NTS Gradient, and Colgate-Palmolive.
-        I run Prompty Trainer, a prompt-simulator for teams, and I’m building
-        PLAI Cube — an open-ended AI toy.
-      </p>
+    <p>
+      Right now I design and implement AI solutions at
+      <a href="https://supalab.ai" target="_blank" rel="noopener">SupaLab</a>.
+      I teach and speak at SIBUR, The Edgers, OKKAM, Partsdirect,
+      Pasha Holding, NTS Gradient, and Colgate-Palmolive.
+      I run Prompty Trainer, a prompt-simulator for teams, and I’m building
+      PLAI Cube — an open-ended AI toy.
+    </p>
 
-      <p>
-        Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.
-      </p>
-    </div>
+    <p>
+      Let’s <a href="https://t.me/liquid_lockheed" target="_blank" rel="noopener">talk</a>.
+    </p>
   </div>
 </body>
 </html>
